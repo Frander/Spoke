@@ -69,6 +69,9 @@ import HubsSoundPackSource from "./ui/assets/sources/HubsSoundPackSource";
 import TroikaTextNode from "./editor/nodes/TroikaTextNode";
 import TroikaTextNodeEditor from "./ui/properties/TroikaTextNodeEditor";
 
+import IframeNode from "./editor/nodes/IframeNode";
+import IframeNodeEditor from "./ui/properties/IframeNodeEditor";
+
 export function createEditor(api, settings) {
   const editor = new Editor(api, settings);
 
@@ -100,8 +103,6 @@ export function createEditor(api, settings) {
   editor.registerNode(AudioZoneNode, AudioZoneNodeEditor);
   editor.registerNode(TroikaTextNode, TroikaTextNodeEditor);
   editor.registerNode(MirrorNode, MirrorNodeEditor);
-
-
   editor.registerSource(new ElementsSource(editor));
   editor.registerSource(new MyAssetsSource(editor));
   editor.registerSource(new ArchitectureKitSource(api));
@@ -111,6 +112,7 @@ export function createEditor(api, settings) {
   editor.registerSource(new BingVideosSource(api));
   editor.registerSource(new HubsSoundPackSource(editor));
   editor.registerSource(new TenorSource(api));
-
+  //Iframe
+  editor.registerNode(IframeNode, IframeNodeEditor);
   return editor;
 }
